@@ -1,0 +1,74 @@
+Changelog
+=========
+
+Version 0.4.0
+-------------
+
+Date: unreleased
+
+WARNING: This is a major api rework with a lot of breaking changes on java and clojure version.
+
+- Java: Update jna version from 4.0.0 to 4.1.0.
+- Java: Remove ISocket interface (due to wrong design).
+- Java: Remodeled IAsyncScheduler interface (for allow other implementations).
+- Java: Add EPoll and EPollScheduler implementation for async sockets in linux.
+- Java: Remodeled the Socket methods: now the default interface to send and recv is using ByteBuffer.
+- Java: Removed IMessage and Message abstractions (useless).
+- Clojure: Adapt internals to java api changes.
+- Clojure: Start working through abstractions (everything defined as protocol)
+- Clojure: Use reify instead usless defrecords.
+- Clojure: Low level async support is now modeled using callbacks instead core.async.
+- Fix compatibility issues with x86 and x86-64 platforms (thanks to @aarexer)
+- Fix windows related issues (thanks to @aarexer)
+
+
+Version 0.3.2
+-------------
+
+Date: 2014-09-13
+
+- Add subscribe(byte[]) and unsubscribe(byte[]) interfaces (by @mingfai)
+
+
+Version 0.3.1
+-------------
+
+Date: 2014-02-09
+
+- Reverted some changes on default timeouts.
+
+
+Version 0.3.0
+-------------
+
+Date: 2014-02-09
+
+- New: async api support for java bindings.
+- New: experimental core.async support for all sockets.
+- New: experimental core.async channels implementation (only for pipeline sockets)
+- Fixes: removed hardcoded symbols, and now them are resolved in runtime.
+- Add missing unsubscribe method for both bindings.
+
+
+Version 0.2.0
+-------------
+
+Date: 2014-01-07
+
+- Breaking change: make clojure api more concise (add "!" to side-effecting function)
+- Breaking change: Rename nanomsg.Constants to nanomsg.Nanomsg.
+- Breaking change: Rename nanomsg.jna.NanoMsg to nanomsg.NativeLibrary
+- Breaking change: Fix java nonblocking api.
+- Breaking change: Some send methods now return int instead of prevous void.
+- Ensure immutability always marking variables as final.
+- Use specific defined exceptions instead of generic RuntimeException.
+- Add Pipeline protocol (with push/pull socket types).
+- Add Device support.
+
+
+Version 0.1.0
+-------------
+
+Date: 2013-11-01
+
+- Initial version
