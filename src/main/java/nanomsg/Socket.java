@@ -316,9 +316,9 @@ public abstract class Socket {
     }
 
     /**
-     * Set memory.
-     * @param ptr pointer.
-     * @param value timeout.
+     * Allocate and set size_t
+     * @param ptr pointer
+     * @param value timeout
      */
     private static void setSizeT(Memory ptr, long value)
     {
@@ -329,15 +329,14 @@ public abstract class Socket {
     }
 
     /**
-     * Pointer with allocated memory.
-     * @param value value.
-     * @return Memory pointer.
+     * Allocate new size_t
+     * @param value value
+     * @return Memory pointer
      */
-    private Memory newSizeT(long value)
+    private static Memory newSizeT(long value)
     {
         Memory ptr = new Memory(Native.SIZE_T_SIZE);
         setSizeT(ptr, value);
-
         return ptr;
     }
 }

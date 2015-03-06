@@ -1,19 +1,12 @@
 package nanomsg.async.impl;
 
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import java.util.Queue;
 import java.util.Map;
-import java.util.LinkedList;
 import java.lang.Thread;
 
 import com.sun.jna.Memory;
-import com.sun.jna.Pointer;
-import com.sun.jna.Native;
-import com.sun.jna.ptr.PointerByReference;
 
 import nanomsg.Socket;
 import nanomsg.Nanomsg;
@@ -22,7 +15,6 @@ import nanomsg.async.IAsyncScheduler;
 import nanomsg.async.AsyncOperation;
 import nanomsg.async.impl.epoll.Epoll;
 
-import nanomsg.exceptions.EAgainException;
 import nanomsg.exceptions.IOException;
 
 

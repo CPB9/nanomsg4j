@@ -1,11 +1,8 @@
 package nanomsg.async.impl;
 
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import java.util.Queue;
-import java.util.LinkedList;
 import java.lang.Thread;
 
 import nanomsg.Nanomsg;
